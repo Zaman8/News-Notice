@@ -1,11 +1,35 @@
-﻿using System;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+using UnityEngine.UI;
 
-namespace NewsNoticeHeadlines
-{
+public class HeadlineTest : MonoBehaviour {
+    private Text text;
+    // Use this for initialization
+    void Start() {
+        adjective Nuclear = new adjective("Nuclear", -1, 1000, 500);
+        noun Missile = new noun("Missile", -1, 800, 600);
+        noun Cookie = new noun("Cookie", 1, -200, -240);
+        verb Fires = new verb("Fires", -1, 800, 700);
+        properNoun America = new properNoun("America", 1, 500, -200);
+        America.addNoun(Missile);
+        America.addNoun(Cookie);
+        America.addVerb(Fires);
+        Fires.addNoun(Missile);
+        Missile.addAdjective(Nuclear);
+
+        headline One = new headline();
+        One.generateHeadline();
+        text = gameObject.GetComponent<Text>();
+        text.text = One.getHeadline();
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+}
+
     public class headline {
         List<properNoun> properNouns = new List<properNoun>();
         properNoun properNoun = null;
@@ -17,8 +41,8 @@ namespace NewsNoticeHeadlines
         public int chaos;
         public int good;
         public void generateHeadline() {
-            Random choice = new Random();
-            properNoun = properNouns[choice.Next(properNouns.Count)];
+        System.Random choice = new System.Random();
+        properNoun = properNouns[choice.Next(0, properNouns.Count)];
             verb = properNoun.verbChoice();
             noun = nounChoice(properNoun, verb);
             adjective = noun.adjectiveChoice();
@@ -29,13 +53,13 @@ namespace NewsNoticeHeadlines
         private noun nounChoice(properNoun plist, verb vlist) {
             List<noun> commonNouns = new List<noun>();
             foreach (noun properNoun in plist.nouns) {
-                foreach(noun verbNoun in vlist.nouns) {
+                foreach (noun verbNoun in vlist.nouns) {
                     if (verbNoun.Equals(properNoun))
                         commonNouns.Add(verbNoun);
                 }
             }
-            Random choice = new Random();
-            return commonNouns[choice.Next(commonNouns.Count)];
+        int choice = UnityEngine.Random.Range(0, commonNouns.Count-1);
+            return commonNouns[choice];
         }
         public string getHeadline() {
             headlines[0] = properNoun.word;
@@ -57,18 +81,18 @@ namespace NewsNoticeHeadlines
         public int viewers;
         public int chaos;
         public properNoun(string word, int good, int viwers, int chaos) {
-            this.word = word ;
+            this.word = word;
             this.good = good;
             this.viewers = viwers;
             this.chaos = chaos;
         }
-       public verb verbChoice() {
-            Random choice = new Random();
-            return verbs[choice.Next(verbs.Count)];
+        public verb verbChoice() {
+        System.Random choice = new System.Random();
+        return verbs[choice.Next(0, verbs.Count)];
         }
         public noun nounChoice() {
-            Random choice = new Random();
-            return nouns[choice.Next(nouns.Count)];
+        System.Random choice = new System.Random();
+        return nouns[choice.Next(0, nouns.Count)];
         }
         public void addVerb(verb verb) {
             verbs.Add(verb);
@@ -90,8 +114,8 @@ namespace NewsNoticeHeadlines
             this.chaos = chaos;
         }
         public noun nounChoice() {
-            Random choice = new Random();
-            return nouns[choice.Next(nouns.Count)];
+        System.Random choice = new System.Random();
+        return nouns[choice.Next(0, nouns.Count)];
         }
         public void addNoun(noun noun) {
             nouns.Add(noun);
@@ -110,8 +134,8 @@ namespace NewsNoticeHeadlines
             this.chaos = chaos;
         }
         public adjective adjectiveChoice() {
-            Random choice = new Random();
-            return adjectives[choice.Next(adjectives.Count)];
+        System.Random choice = new System.Random();
+            return adjectives[choice.Next(0, adjectives.Count)];
         }
         public void addAdjective(adjective adjective) {
             adjectives.Add(adjective);
@@ -129,4 +153,3 @@ namespace NewsNoticeHeadlines
             this.chaos = chaos;
         }
     }
-}
