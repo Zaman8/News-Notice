@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace News_Notice_Headlines
+namespace NewsNoticeHeadlines
 {
     public class headlines {
         List<properNoun> properNouns = new List<properNoun>();
