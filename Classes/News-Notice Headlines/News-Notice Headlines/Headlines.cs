@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace NewsNoticeHeadlines
 {
-    public class headlines {
+    public class headline {
         List<properNoun> properNouns = new List<properNoun>();
         properNoun properNoun = null;
         verb verb = null;
         noun noun = null;
         adjective adjective = null;
-        string[] headline = new string[4];
+        string[] headlines = new string[4];
         public int viewers;
         public int chaos;
         public int good;
-        public headlines() {
+        public void generateHeadline() {
             Random choice = new Random();
             properNoun = properNouns[choice.Next(properNouns.Count)];
             verb = properNoun.verbChoice();
@@ -38,12 +38,12 @@ namespace NewsNoticeHeadlines
             return commonNouns[choice.Next(commonNouns.Count)];
         }
         public string getHeadline() {
-            headline[0] = properNoun.word;
-            headline[1] = verb.word;
-            headline[2] = adjective.word;
-            headline[3] = noun.word;
+            headlines[0] = properNoun.word;
+            headlines[1] = verb.word;
+            headlines[2] = adjective.word;
+            headlines[3] = noun.word;
 
-            return headline.ToString();
+            return String.Format("{0} {1} {2} {3}", headlines[0], headlines[1], headlines[2], headlines[3]);
         }
         public void addProperNoun(properNoun noun) {
             properNouns.Add(noun);

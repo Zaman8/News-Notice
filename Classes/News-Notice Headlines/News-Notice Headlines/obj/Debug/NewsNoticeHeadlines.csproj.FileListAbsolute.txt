@@ -1,0 +1,4 @@
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\News-Notice Headlines\bin\Debug\News-Notice Headlines.dll
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\News-Notice Headlines\bin\Debug\News-Notice Headlines.pdb
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\News-Notice Headlines\obj\Debug\News-Notice Headlines.dll
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\News-Notice Headlines\obj\Debug\News-Notice Headlines.pdb
