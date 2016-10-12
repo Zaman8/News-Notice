@@ -13,12 +13,18 @@ namespace News_Notice_Headlines
         noun noun = null;
         adjective adjective = null;
         string[] headline = new string[4];
+        public int viewers;
+        public int chaos;
+        public int good;
         public headlines() {
             Random choice = new Random();
             properNoun = properNouns[choice.Next(properNouns.Count)];
             verb = properNoun.verbChoice();
             noun = nounChoice();
             adjective = noun.adjectiveChoice();
+            viewers = properNoun.viewers + verb.viewers + noun.viewers + adjective.viewers;
+            chaos = properNoun.chaos + verb.chaos + noun.chaos + adjective.chaos;
+            good = properNoun.good * verb.good * noun.good * adjective.good;
         }
         private noun nounChoice() {
             List<noun> commonNouns = new List<noun>();
@@ -47,9 +53,9 @@ namespace News_Notice_Headlines
         public string word;
         List<verb> verbs = new List<verb>();
         public List<noun> nouns = new List<noun>();
-        int good;
-        int viewers;
-        int chaos;
+        public int good;
+        public int viewers;
+        public int chaos;
         public properNoun(string word, int good, int viwers, int chaos) {
             this.word = word ;
             this.good = good;
@@ -74,9 +80,9 @@ namespace News_Notice_Headlines
     class verb {
         public string word;
         public List<noun> nouns = new List<noun>();
-        int good;
-        int viewers;
-        int chaos;
+        public int good;
+        public int viewers;
+        public int chaos;
         public verb(string word, int good, int viewers, int chaos) {
             this.word = word;
             this.good = good;
@@ -94,9 +100,9 @@ namespace News_Notice_Headlines
     class noun {
         public string word;
         List<adjective> adjectives = new List<adjective>();
-        int good;
-        int viewers;
-        int chaos;
+        public int good;
+        public int viewers;
+        public int chaos;
         public noun(string word, int good, int viewers, int chaos) {
             this.word = word;
             this.good = good;
@@ -113,9 +119,9 @@ namespace News_Notice_Headlines
     }
     class adjective {
         public string word;
-        int good;
-        int viewers;
-        int chaos;
+        public int good;
+        public int viewers;
+        public int chaos;
         public adjective(string word, int good, int viewers, int chaos) {
             this.word = word;
             this.good = good;
