@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace News_Notice_Headlines
 {
-    public class headlines {
+    class headlines {
         List<properNoun> properNouns = new List<properNoun>();
         properNoun properNoun = null;
         verb verb = null;
@@ -38,6 +38,9 @@ namespace News_Notice_Headlines
             headline[3] = noun.word;
 
             return headline.ToString();
+        }
+        public void addProperNoun(properNoun noun) {
+            properNouns.Add(noun);
         }
     }
     class properNoun {
@@ -118,20 +121,6 @@ namespace News_Notice_Headlines
             this.good = good;
             this.viewers = viewers;
             this.chaos = chaos;
-        }
-    }
-     class initialize {
-        public void verbs() {
-
-        }
-        public void nouns() {
-
-        }
-        public void adjectives() {
-
-        }
-        public void propernouns() {
-            properNoun america = new properNoun("America", 1, 1000, -100);
         }
     }
 }
