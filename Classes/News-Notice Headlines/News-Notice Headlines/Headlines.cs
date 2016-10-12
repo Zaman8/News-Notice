@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace News_Notice_Headlines
 {
-    class headlines {
+    public class headlines {
         List<properNoun> properNouns = new List<properNoun>();
         properNoun properNoun = null;
         verb verb = null;
@@ -49,7 +49,7 @@ namespace News_Notice_Headlines
             properNouns.Add(noun);
         }
     }
-    class properNoun {
+    public class properNoun {
         public string word;
         List<verb> verbs = new List<verb>();
         public List<noun> nouns = new List<noun>();
@@ -77,7 +77,7 @@ namespace News_Notice_Headlines
             nouns.Add(noun);
         }
     }
-    class verb {
+    public class verb {
         public string word;
         public List<noun> nouns = new List<noun>();
         public int good;
@@ -97,7 +97,7 @@ namespace News_Notice_Headlines
             nouns.Add(noun);
         }
     }
-    class noun {
+    public class noun {
         public string word;
         List<adjective> adjectives = new List<adjective>();
         public int good;
@@ -117,7 +117,7 @@ namespace News_Notice_Headlines
             adjectives.Add(adjective);
         }
     }
-    class adjective {
+    public class adjective {
         public string word;
         public int good;
         public int viewers;
