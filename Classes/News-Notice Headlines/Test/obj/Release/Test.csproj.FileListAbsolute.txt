@@ -1,0 +1,8 @@
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\bin\Release\Test.exe.config
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\bin\Release\Test.exe
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\bin\Release\Test.pdb
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\bin\Release\News-Notice Headlines.dll
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\bin\Release\News-Notice Headlines.pdb
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\obj\Release\Test.csprojResolveAssemblyReference.cache
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\obj\Release\Test.exe
+C:\Users\19stizai\Documents\GitHub\News-Notice\Classes\News-Notice Headlines\Test\obj\Release\Test.pdb
